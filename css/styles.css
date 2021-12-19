@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root{
+
+    /*Primary text*/
+    --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+
+    /*Gradient*/
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+
+    /*Neutral text*/
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+
+    /*Divider*/
+    --light-grayish-blue: hsl(240, 5%, 91%);
+
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-size: 12px;
+    background: linear-gradient(0deg, var(--soft-blue) 50%, var(--soft-violet) 100%);
+    height: 100vh;
+    font-family: 'Kumbh Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	max-width: 90%;
+	min-height: 70%;
+	border-radius: 10px;
+	justify-content: flex-end;
+	background-image: url('../images/bg-pattern-mobile.svg');
+	background-repeat: no-repeat;
+	background-position-x: 46%;
+	background-size: 13rem;
+}
+
+.container img {
+    display: none;
+}
+
+.container::before {
+	content: url('../images/illustration-woman-online-mobile.svg');
+	position: absolute;
+	left: 21%;
+	width: 13rem;
+	top: 3%;
+}
+
+.container__title {
+	font-size: 2rem;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+	padding: 0 1rem 1rem 1rem;
+	overflow: hidden;
+	height: 0rem;
+    transition: height 0.3s;
+}
+
+.active{
+    height: 4rem;
+}
+
+.active .card__qst::after{
+    transform: rotate(180deg);
+}
+
+.active .card__qst{
+    font-weight: 700;
+}
+
+.card__qst {
+	color: var(--very-dark-grayish-blue);
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 0.75rem;
+}
+
+.card__qst::after{
+    content: url('../images/icon-arrow-down.svg');
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+}
+
+.card__qst:hover{
+    cursor: pointer;
+    color: var(--soft-red);
+}
+
+.card__answer{
+    color: var(--very-dark-grayish-blue);
+}
+
+hr {
+	margin: 1rem;
+	color: var(--light-grayish-blue);
+}
+
+hr:last-of-type{
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 1000px){
+    .container {
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        min-width: 70%;
+        min-height: 70%;
+        border-radius: 10px;
+        justify-content: center;
+        background-image: url('../images/bg-pattern-desktop.svg');
+        background-repeat: no-repeat;
+        background-position-x: -195%;
+        background-size: 50rem;
+        overflow: hidden;
+        background-position-y: 65%;
+    }
+
+    .container::before {
+        content: '';
+    }
+
+    .container img {
+        display: block;
+        position: absolute;
+        left: 9.5%;
+        top: 25%;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        justify-content: center;
+        margin-left: 17rem;
+    }
+
+    .wrapper h1 {
+        text-align: left;
+        margin-left: 1rem;
+    }
+
+    
+
+}
